@@ -1,17 +1,16 @@
-.warnaTulisan{
-  color: white;
+.warna-tulisan {
+    color: blue;
+    background: red;
 }
 
-.ukuranTulisan{
-  font-size: 100px;
+.ukuran-tulisan {
+	font-size: 100px;
 }
 
-.hs{
-  height: 400px;
-
+.h-50 {
+	height: 400px !important;
 }
 
-.card{
-  height: 0px;
+.margin-card {
+	margin-top: 50px;
 }
-
