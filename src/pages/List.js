@@ -192,73 +192,71 @@ function List() {
 	}, []);
 
 	function getUser() {
-		axios.get('http://127.0.0.1:8000/api/get-user') // 200
+		axios.get(`http://127.0.0.1:8000/api/get-user`) // 200
 			.then(function (response) {
 				console.log('response :>> ', response.data);
 				setDataUser(response.data)
-
-				// kode yang ada disini bakal di jalanin kalo berhasil dapet sesuatu
 			}).catch(function (error) {
-				// kode yang ada disini bakal di jalanin kalo tidak berhasil dapet sesuatu
 			}).finally(function () {
-				// kode yang ada disini bakal di jalanin kalo dia berhasil atau tidak berhasil dapet sesuatu
 			});
 	}
 
-	// function onDelete() {
-	// 	axios.delete(`http://127.0.0.1:8000/api/delete-user/${idUser}`).then(({data})=>{
+	const deleteUser = (id) => {
+		axios.delete(`http://127.0.0.1:8000/api/delete-user/` + id).then(function (response) {
+			getUser();
+		}).catch(function (error) {
 
+		}).finally(function () {
 
-	// 	})
-		
-
-	// }
+		});
+	}
 
 	return (
 		<div>
 
+			<section>
+				<Container className='mt-5'>
+					<h2 className='mb-0'>Daftar User</h2>
+					<p>Ini adalah user yang terdaftar di sistem.</p>
 
-			<Container className='mt-5'>
-				<h2 className='mb-0'>Daftar User</h2>
-				<p>Ini adalah user yang terdaftar di sistem.</p>
+					<Button variant='success' href='/create' className='horizontal'>Tambah</Button>
 
-				<Button variant='success' href='/create' className='horizontal'>Tambah</Button>
+					<Table className='text3'>
+						<thead>
+							<tr className='text'>
+								<th>#</th>
+								<th>Nama</th>
+								<th>Email</th>
+								<th>Password</th>
+								<th>Aksi</th>
+							</tr>
+						</thead>
+						<tbody>
+							{
+								DataUser.map((item, index) => {
+									return (
+										<tr className='text'>
+											<td>{index + 1}</td>
+											<td>{item.name}</td>
+											<td>{item.email}</td>
+											<td>{item.password}</td>
+											<td className='text3'>
+												<Button variant="primary" className='btn btn-primary me-2' href={'/update/' + item.id}>Update</Button>
+												<Button onClick={() => deleteUser(item.id)} href className='btn btn-primary me-2' variant="danger">Hapus</Button>
+											</td>
+										</tr>
 
-				<Table bordered hover>
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>Nama</th>
-							<th>Email</th>
-							<th>Password</th>
-							<th>Aksi</th>
-						</tr>
-					</thead>
-					<tbody>
-						{
-							DataUser.map((item, index) => {
-								return (
-									<tr>
-										<td>{index + 1}</td>
-										<td>{item.name}</td>
-										<td>{item.email}</td>
-										<td>{item.password}</td>
-										<td>
-											<Button variant="primary" className='me-2' href={'/update/'+item.id}>Update</Button>
-											<Button variant="danger" className='me-2'onSubmit={()=>onDelete(item.id)} href='/'>Delete</Button>
+									)
 
-										</td>
-									</tr>
+								})
 
-								)
+							}
 
-							})
+						</tbody>
+					</Table>
+				</Container>
+			</section>
 
-						}
-
-					</tbody>
-				</Table>
-			</Container>
 
 		</div>
 	);
