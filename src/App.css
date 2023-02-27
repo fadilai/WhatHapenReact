@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 *{
@@ -80,3 +81,12 @@ button{
     font-weight: 600;
 }
 
+=======
+.h-50 {
+	height: 400px !important;
+}
+
+.margin-card {
+	margin-top: 50px;
+}
+>>>>>>> c9d2697acc8a4dfe61421461a8a12772777538ce

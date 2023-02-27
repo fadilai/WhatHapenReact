@@ -205,14 +205,14 @@ function List() {
 			});
 	}
 
-	function onDelete() {
-		axios.delete('http://127.0.0.1:8000/api/delete-user/{id}').then(({data})=>{
+	// function onDelete() {
+	// 	axios.delete(`http://127.0.0.1:8000/api/delete-user/${idUser}`).then(({data})=>{
 
 
-		})
+	// 	})
 		
 
-	}
+	// }
 
 	return (
 		<div>
