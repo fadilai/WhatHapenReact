@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-ini adalah CRUD dengan menggunkan library ReactJs(front end) dan framework laravel(back end)
+ini adalah CRUD dengan menggunkan library ReactJs(front end) dan framework laravel(back end). Dan back end nya bisa dilihat pada link berikut (https://github.com/fadilai/back_end)
 
 ## Available Scripts
 
