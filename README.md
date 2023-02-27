@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ini adalah CRUD dengan menggunkan library ReactJs(front end) dan framework laravel(back end). Dan back end nya bisa dilihat pada link berikut (https://github.com/fadilai/back_end)
 
+#SC
+![1](https://user-images.githubusercontent.com/81276665/221651939-3fd762ce-ec5b-44ab-8d8e-cc85394d89d0.jpg)
+
 ## Available Scripts
 
 In the project directory, you can run:
